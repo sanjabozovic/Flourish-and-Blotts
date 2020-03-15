@@ -1,6 +1,6 @@
 window.onload = function(){
 
-    if( window.location.href =="https://sanjabozovic.github.io/" || window.location.href == "https://sanjabozovic.github.io/index.html") {
+    if( window.location.href =="https://sanjabozovic.github.io/Flourish-and-Blotts" || window.location.href == "https://sanjabozovic.github.io/Flourish-and-Blotts/index.html") {
     menu();
     scrollMenu();
     
@@ -22,7 +22,7 @@ window.onload = function(){
 
 
     for(let i=0; i<=18; i++){
-        if(window.location.href == `https://sanjabozovic.github.io/knjiga.html?id=${i}`){
+        if(window.location.href == `https://sanjabozovic.github.io/Flourish-and-Blotts/knjiga.html?id=${i}`){
             filtriranaKnjiga();
         }
     }
