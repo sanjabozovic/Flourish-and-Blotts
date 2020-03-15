@@ -1,0 +1,365 @@
+[
+    {
+        "id" : 1,
+        "slika" : "assets/images/moravska-noc.jpg",
+        "naziv" : "Moravska noć",
+        "autor" : "Peter Handke",
+        "zanrovi" : [
+            {
+                "id" : 1,
+                "zanrNaziv": "drama"
+            }
+        ],
+        "opis" : "Porodin, centralna Srbija, nešto pre ponoći. Sedam osoba približava se obali reke na kojoj je usidren brod Moravska noć. U svoj plutajući dom pozvao ih je pisac koji je odlučio da se povuče sa književne scene. Sedmorica prijatelja ne znaju zašto su pozvani tako iznenada: neke je probudio telefon, neke kucanje glasnika na vrata ili kamenčić bačen na prozor. Još veće iznenađenje čeka ih na brodu, gde ih ovaj ozloglašeni ženomrzac dočekuje u društvu jedne žene. Ko je ta žena? Njegova ljubavnica? Prostitutka? Ili možda asistentkinja? Pitanja naviru, ali pisac ne želi još ništa da govori, čitava noć je pred njim. Duga noć u kojoj će pričati o svom „kružnom putovanju“ od Balkana do Španije, Nemačke i Austrije, o putu koji je prevalio u potrazi za sopstvenim korenima, ali i bežeći od žene koja ga progoni da bi mu došla glave. A možda je to baš ova žena koja zajedno s njima dočekuje svitanje?",
+        "cena" : 899.99,
+        "pismo" : "Latinica",
+        "format" : "13x20cm",
+        "godinaIzdanja" : 2020,
+        "bestseler" : true
+    },
+    {
+        "id" : 2,
+        "slika" : "assets/images/ako_sutra_ne_postoji.jpg",
+        "naziv" : "Ako sutra ne postoji",
+        "autor" : "Gijom Muso",
+        "zanrovi" : [
+            {
+                "id" : 2,
+                "zanrNaziv": "ljubavni"
+            }
+        ],
+        "opis" : "Ona je njegova prošlost. On je njena budućnost.Ema živi u Njujorku. Sa trideset dve godine, i dalje traži onog pravog. Metju živi u Bostonu. Izgubio je ženu u strašnoj nesreći, i sam odgaja svoju četvorogodišnju ćerkicu. Sudbinski susret u virtuelnom svetu dovešće ih do toga da veruju da su možda najzad pronašli sreću. Nestrpljivi da se upoznaju, dogovaraju večeru u malom italijanskom restoranu na Menhetnu. Istog dana u isto vreme, oboje otvaraju vrata tog restorana i odlaze do istog stola. Pa ipak, putevi im se nikad neće ukrstiti. Da li je to igra laži? Izmišljotina mašte? Manipulacija? Uhvaćeni u obliku stvarnosti koji ne mogu da pojme, Metju i Ema brzo shvataju da to nije samo propuštena prilika... ",
+        "cena" : 719.99,
+        "pismo" : "Latinica",
+        "format" : "14.5x20.5cm",
+        "godinaIzdanja" : 2014,
+        "bestseler" : true
+    },
+    {
+        "id" : 3,
+        "slika" : "assets/images/u_basti_oleandera.jpg",
+        "naziv" : "U bašti oleandera",
+        "autor" : "Roza Ventrela",
+        "zanrovi" : [
+            {
+                "id" : 2,
+                "zanrNaziv": "ljubavni"
+            }
+        ],
+        "opis" : "Zasadio ga je Agostino Ventrela, kada se tu doselio sa svojom suprugom Anitom, koju u selu svi zovu Marđala. Ova žena neobične lepote poseduje jedinstven dar da leči novorođenčad, pomaže na porođaju, skida uroke. Strogim pogledom, onim koji se nikada ne rasipa u nežnost, nadgleda svoje tri kćerke: Rozetu, Korneliju i Dijamante. Prva je lepa i neukrotive prirode kao i majka. Druga ima kosu boje meda i blagu, nežnu narav. Treća i najmlađa, Dijamante, iza neobuzdanih, divljih kovrdža krije podjednako buntovan karakter.",
+        "cena" : 719.99,
+        "pismo" : "Latinica",
+        "format" : "14.5x20.5cm",
+        "godinaIzdanja" : 2019,
+        "bestseler" : true
+    },
+    {
+        "id" : 4,
+        "slika" : "assets/images/kaktus.jpg",
+        "naziv" : "Kaktus",
+        "autor" : "Sara Hejvud",
+        "zanrovi" : [
+            {
+                "id" : 2,
+                "zanrNaziv": "ljubavni"
+            }
+        ],
+        "opis" : "Za Suzan Grin emocije samo komplikuju stvar i ne uklapaju se u njen savršeno uređen život. Ona ima stan idealan za jednu osobu, posao koji odgovara njenoj racionalnoj prirodi i „dogovor“ sa jednim muškarcem koji je ispunjava na intimnom planu. No kad iznenada ostane bez majke i sazna da će i sama postati majka, Suzan se ostvari njena najgora noćna mora – gubi kontrolu nad svojim životom. A kad sazna da je njena majka testamentom ostavila mnogo više njenom lenjom bratu nego njoj, Suzanin već poljuljani svet počinje da se ruši. Kako joj se porođaj bliži, a porodični problemi dosežu tačku usijanja, Suzan će podršku naći tamo gde je najmanje očekuje.",
+        "cena" : 939.99,
+        "pismo" : "Latinica",
+        "format" : "13x20cm",
+        "godinaIzdanja" : 2020,
+        "bestseler" : true
+    },
+    {
+        "id" : 5,
+        "slika" : "assets/images/arhipelag_za_drugi_zivot_v.jpg",
+        "naziv" : "Arhipelag za drugi život",
+        "autor" : "Andrej Makin",
+        "zanrovi" : [
+            {
+                "id" : 8,
+                "zanrNaziv": "akcioni"
+            }
+        ],
+        "opis" : "Na rubu ruskog Dalekog istoka, u dahu Tihog okeana, leže zemlje koje kao da beže od istorije... Ko je taj zločinac s više lica, koga Pavel Garcev i njegovi drugovi moraju zarobiti kroz neizmernost tajge? Ovo je avantura dugog lova na čoveka koji nam je ispričan u ovom snažnom istraživačkom romanu. To je ujedno i izvanredan dijalog, gotovo izvan sveta, između iscrpljenog vojnika i tajanstvenog plena koji progoni. Kad Pavel sazna pravi identitet begunca, njegov će se život okrenuti naopačke. Lov poprima uzbudljivu dimenziju, dok se na horizontu pojavljuje arhipelag Šantar: tamo gde je „drugi život“ moguć, u krhkoj večnosti ljubavi. ",
+        "cena" : 700.00,
+        "pismo" : "Latinica",
+        "format" : "21x21cm",
+        "godinaIzdanja" : 2019,
+        "bestseler" : false
+    },
+    {
+        "id" : 6,
+        "slika" : "assets/images/malavita_v.jpg",
+        "naziv" : "Malavita",
+        "autor" : "Tonino Benakvista",
+        "zanrovi" : [
+            {
+                "id" : 8,
+                "zanrNaziv": "akcioni"
+            },
+            {
+                "id" : 6,
+                "zanrNaziv" : "komedija"
+            }
+        ],
+        "opis" : "Američka porodica se nastanjuje u Šolonu na Avru, u Normandiji. Sve je naizgled uobičajeno. Fred, otac, tvrdi da je istoričar koji priprema knjigu o iskrcavanju. Megi, majka, volontira u jednom dobrotvornom udruženju i briljantno sprema roštilj. Bel, ćerka, časno nosi svoje ime. I najzad, bez Vorena, sina, ništa ne može da se obavi i svima je potrebna njegova pomoć. A ne smemo zaboraviti ni veoma diskretnog psa po imenu Malavita. Sve u svemu, porodica poput drugih. Osim što porodica Blejk ni u kom slučaju nije onakva kakvom želi da se prikaže jer otac nije pisac već bivši šef njujorškog mafijaškog klana koga prate agenti FBI-ja.",
+        "cena" : 850.00,
+        "pismo" : "Latinica",
+        "format" : "13x20cm",
+        "godinaIzdanja" : 2014,
+        "bestseler" : false
+    },
+    {
+        "id" : 7,
+        "slika" : "assets/images/casovnicareva_kci_v.jpg",
+        "naziv" : "Časovničareva kći",
+        "autor" : "Kejt Morton",
+        "zanrovi" : [
+            {
+                "id" : 1,
+                "zanrNaziv": "drama"
+            }
+        ],
+        "opis" : "U leto 1862. grupa mladih umetnika na čelu sa talentovanim Edvardom Redklifom dolazi u kuću Birčvud na obali Temze. Namera im je da provedu mesec dana u izmaglici inspiracije i kreativnosti. Ali tokom tog perioda jedna žena je poginula, a druga iščezla, ukraden je dragulj neprocenjive vrednosti, i Edvardov život je uništen.",
+        "cena" : 850.00,
+        "pismo" : "Latinica",
+        "format" : "13x20cm",
+        "godinaIzdanja" : 2020,
+        "bestseler" : false
+    },
+    {
+        "id" : 8,
+        "slika" : "assets/images/koliko_si_spreman_da_platis_v.jpg",
+        "naziv" : "Koliko si spreman da platiš",
+        "autor" : "Brankica Ljamić",
+        "zanrovi" : [
+            {
+                "id" : 1,
+                "zanrNaziv": "drama"
+            }
+        ],
+        "opis" : "Marko, Luka, Klara, deda Miloje, Bogdan, Milena i dr. su izmišljeni likovi koji su doneli odluku da im je dosta čekanja da aktuelna (ko-zna-koja-po redu) kriza prođe i pozabavili se onim što oni sâmi mogu da učine da bi im život postao smisaon i lep, u svakom mogućem smislu. Junaci romana žive i rade u okruženju u kome ljudi, po mnogo čemu različiti – obrazovani i neškolovani, iz grada i sela, žene i muškarci, domaći i stranci, stariji i mladi, iskusni i neiskusni – zajedno uče, radeći na pronalaženju efikasnih, profitabilnih i šarmantnih načina rešavanja i sprečavanja problema. U tom procesu, oni otkrivaju staru istinu da malo početne hrabrosti, podržane dobronamernim savetima i upornim i doslednim radom, mogu dovesti do životnih rezultata koji daleko prevazilaze planirane poslovne efekte. Na taj način, nakon serije ličnih, profesionalnih, društvenih i istorijskih slomova, likovi romana pronalaze sopstvenu metodologiju da postanu i ostanu – životni i poslovni pobednici.",
+        "cena" : 650.00,
+        "pismo" : "Latinica",
+        "format" : "21x21cm",
+        "godinaIzdanja" : 2019,
+        "bestseler" : false
+    },
+    {
+        "id" : 9,
+        "slika" : "assets/images/mrtvi_glasovi_v.jpg",
+        "naziv" : "Mrtvi glasovi",
+        "autor" : "Ketrin Arden",
+        "zanrovi" : [
+            {
+                "id" : 3,
+                "zanrNaziv": "horor"
+            },
+            {
+                "id" : 4,
+                "zanrNaziv" : "knjige za decu"
+            }
+        ],
+        "opis" : "Sjajna knjiga horor priča za decu. Jer deca vole da se malko plaše... ",
+        "cena" : 910.00,
+        "pismo" : "Latinica",
+        "format" : "20x20cm",
+        "godinaIzdanja" : 2017,
+        "bestseler" : false
+    },
+    {
+        "id" : 10,
+        "slika" : "assets/images/mali_prostori_v.jpg",
+        "naziv" : "Mali prostori",
+        "autor" : "Ketrin Arden",
+        "zanrovi" : [
+            {
+                "id" : 3,
+                "zanrNaziv": "horor"
+            },
+            {
+                "id" : 4,
+                "zanrNaziv" : "knjige za decu"
+            }
+        ],
+        "opis" : "Sjajna knjiga horor priča za decu. Jer deca vole da se malko plaše... ",
+        "cena" : 910.00,
+        "pismo" : "Latinica",
+        "format" : "20x20cm",
+        "godinaIzdanja" : 2017,
+        "bestseler" : false
+    },
+    {
+        "id" : 11,
+        "slika" : "assets/images/kaput_od_mahovine_v.jpg",
+        "naziv" : "Kaput od mahovine",
+        "autor" : "Stefan Tićmi",
+        "zanrovi" : [
+            {
+                "id" : 4,
+                "zanrNaziv" : "knjige za decu"
+            }
+        ],
+        "opis" : "Zanosna, omamljujuća priča o Najdanu počinje najpre kao bajka o čoveku kome iz leđa izrasta drvo. Usamljen i odbačen, Najdan sanjari o ljubavi iz mladih dana, sve dok jedan umetnički projekat iz korena svima ne promeni život.",
+        "cena" : 450.00,
+        "pismo" : "Latinica",
+        "format" : "13x20cm",
+        "godinaIzdanja" : 2020,
+        "bestseler" : false
+    },
+    {
+        "id" : 12,
+        "slika" : "assets/images/hrabre_igre_v.jpg",
+        "naziv" : "Hrabre igre",
+        "autor" : "Roberto Pjumini",
+        "zanrovi" : [
+            {
+                "id" : 4,
+                "zanrNaziv" : "knjige za decu"
+            }
+        ],
+        "opis" : "Deset kratkih priča o deset malih izazova, koji i nisu baš mali ako ste dete koje je rešilo da istražuje svet. Ali setite se: trenutak hrabrosti i radosti uvek je odmah iza ugla!",
+        "cena" : 580.00,
+        "pismo" : "Latinica",
+        "format" : "19x19cm",
+        "godinaIzdanja" : 2018,
+        "bestseler" : false
+    },
+    {
+        "id" : 13,
+        "slika" : "assets/images/luca_mikrokozma_v.jpg",
+        "naziv" : "Luča mikrokozma",
+        "autor" : "Petar Petrović Njegoš",
+        "zanrovi" : [
+            {
+                "id" : 5,
+                "zanrNaziv" : "poezija"
+            }
+        ],
+        "opis" : "Luča Mikrokozma je jedan od najfilozofskijih epova srpske književnosti. Ovo Njegoševo delo je oduvek izazivalo nedoumice kod književnih istraživača i tumača, a pre svega zbog svoje hermetičnosti.",
+        "cena" : 230.00,
+        "pismo" : "Latinica",
+        "format" : "17x17cm",
+        "godinaIzdanja" : 2019,
+        "bestseler" : false
+    },
+    {
+        "id" : 14,
+        "slika" : "assets/images/lovostaj_v-3.jpg",
+        "naziv" : "Lovostaj",
+        "autor" : "Monika Herceg",
+        "zanrovi" : [
+            {
+                "id" : 5,
+                "zanrNaziv" : "poezija"
+            }
+        ],
+        "opis" : "Feminizam i borba za emancipaciju, uklještenost između izazova materinstva i profesionalnog ostvarivanja, femicid i nasilje nad ženama – sve su to socio-politička goruća pitanja sa kojima se pesnikinja hrabro uhvatila u koštac, uobličena u emotivno razarajuće angažovanu poeziju sa veoma visokim književnoumentičkim kvalitetom.",
+        "cena" : 500.00,
+        "pismo" : "Latinica",
+        "format" : "21x21cm",
+        "godinaIzdanja" : 2016,
+        "bestseler" : false
+    },
+    {
+        "id" : 15,
+        "slika" : "assets/images/uznemireni_ljudi_v.jpg",
+        "naziv" : "Uznemireni ljudi",
+        "autor" : "Fredrik Bakman",
+        "zanrovi" : [
+            {
+                "id" : 1,
+                "zanrNaziv" : "drama"
+            },
+            {
+                "id" : 6,
+                "zanrNaziv" : "komedija"
+            }
+        ],
+        "opis" : "Tokom razgledanja stana koji se nudi na prodaju jedan propali pljačkaš banke zaključaće se s iritantno entuzijastičnim agentom za prodaju nekretnina, dvojicom ogorčenih zavisnika od Ikee, trudnicom, samoubilački nastrojenim multimilionerom i prokletim zecom. Kada policija konačno bude upala u stan, zateći će ga... praznog.",
+        "cena" : 850.00,
+        "pismo" : "Latinica",
+        "format" : "13x20cm",
+        "godinaIzdanja" : 2020,
+        "bestseler" : false
+    },
+    {
+        "id" : 16,
+        "slika" : "assets/images/bracna_proba_v.jpg",
+        "naziv" : "Bračna proba",
+        "autor" : "Helen Hoang",
+        "zanrovi" : [
+            {
+                "id" : 2,
+                "zanrNaziv" : "ljubavni"
+            },
+            {
+                "id" : 6,
+                "zanrNaziv" : "komedija"
+            }
+        ],
+        "opis" : "U trenu – sve se promenilo. Vetar je postao baršunast, a mogao je da čuje i svoje srce, koje je jako tuklo, i krv kako struji žilama. Boje su postale svetlije, sve mu je plesalo pred očima. Zelenilo njenih očiju, pa ta žuta košulja, pa plavetnilo letnjeg neba – sve se to grupisalo oko ružičastih Esminih usana.",
+        "cena" : 850.00,
+        "pismo" : "Latinica",
+        "format" : "20x20cm",
+        "godinaIzdanja" : 2015,
+        "bestseler" : false
+    },
+    {
+        "id" : 17,
+        "slika" : "assets/images/12_pravila_za_zivot_v.jpg",
+        "naziv" : "12 pravila za život",
+        "autor" : "Džordan Piterson",
+        "zanrovi" : [
+            {
+                "id" : 7,
+                "zanrNaziv" : "psihologija"
+            }
+        ],
+        "opis" : "U trenu – sve se promenilo. Vetar je postao baršunast, a mogao je da čuje i svoje srce, koje je jako tuklo, i krv kako struji žilama. Boje su postale svetlije, sve mu je plesalo pred očima. Zelenilo njenih očiju, pa ta žuta košulja, pa plavetnilo letnjeg neba – sve se to grupisalo oko ružičastih Esminih usana.",
+        "cena" : 1200.00,
+        "pismo" : "Latinica",
+        "format" : "23x23cm",
+        "godinaIzdanja" : 2018,
+        "bestseler" : false
+    },
+    {
+        "id" : 18,
+        "slika" : "assets/images/identitet_neuspesnog_ucenika_v.jpg",
+        "naziv" : "Identitet neuspešnog učenika",
+        "autor" : "Fredrik Bakman",
+        "zanrovi" : [
+            {
+                "id" : 7,
+                "zanrNaziv" : "psihologija"
+            }
+        ],
+        "opis" : "Monografija pod nazivom „Identitet neuspešnog učenika“ predstavlja plodnu sintezu i najiscrpniju elaboraciju dveju značajnih tema kojima su se autori, dr Nikoleta Gutvajn i dr Vladimir Džinović, kontinuirano bavili duži niz godina - školskog neuspeha ikonstruktivističkog pristupa u psihologiji i pedagogiji. Autori donose jedinstveni, inovativni i plodonosni pogled na fenomen školskog neuspeha, posmatrajući ga kao nešto što učenici kao osobe čine, a ne kao nešto što im se događa.",
+        "cena" : 850.00,
+        "pismo" : "Latinica",
+        "format" : "24x24cm",
+        "godinaIzdanja" : 2019,
+        "bestseler" : false
+    },
+    {
+        "id" : 19,
+        "slika" : "assets/images/vera_i_lik_v.jpg",
+        "naziv" : "Vera i lik",
+        "autor" : "Mihail Epštejn",
+        "zanrovi" : [
+            {
+                "id" : 7,
+                "zanrNaziv" : "psihologija"
+            }
+        ],
+        "opis" : "Religiozno nesvesno u ruskoj kulturi XX veka.",
+        "cena" : 100.00,
+        "pismo" : "Ćirilica",
+        "format" : "21x21cm",
+        "godinaIzdanja" : 1998,
+        "bestseler" : false
+    }
+
+]
