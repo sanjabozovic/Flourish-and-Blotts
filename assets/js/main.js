@@ -1,6 +1,6 @@
 window.onload = function(){
 
-    if( window.location.href =="http://127.0.0.1:8887" || window.location.href == "http://127.0.0.1:8887/index.html") {
+    if( window.location.href =="https://sanjabozovic.github.io/" || window.location.href == "https://sanjabozovic.github.io/index.html") {
     menu();
     scrollMenu();
     
@@ -22,7 +22,7 @@ window.onload = function(){
 
 
     for(let i=0; i<=18; i++){
-        if(window.location.href == `http://127.0.0.1:8887/knjiga.html?id=${i}`){
+        if(window.location.href == `https://sanjabozovic.github.io/knjiga.html?id=${i}`){
             filtriranaKnjiga();
         }
     }
