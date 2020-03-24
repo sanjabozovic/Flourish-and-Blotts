@@ -1,38 +1,35 @@
-window.onload = function(){
-
-    if( window.location.href =="https://sanjabozovic.github.io/Flourish-and-Blotts" || window.location.href == "https://sanjabozovic.github.io/Flourish-and-Blotts/index.html") {
+$(document).ready(function(){
     menu();
     scrollMenu();
+
+    dohvatiKnjige(
+        function(knjige){
+            ispisBestselera(knjige);
+            ispisKnjiga(knjige);
+            ispisZanrova(knjige);
+        }
+    )
+   
+    document.querySelector("#sort").addEventListener("change", sortiranje);
+
+    console.log(localStorage);
+})
+
+
+document.onload = function (){
     
+}
+
+function dohvatiKnjige(success) {
     $.ajax({
         url: "data/knjige.json",
         method: "GET",
-        type: "json",
-        success: function(data){
-            dohvatiKnjige();
-            ispisBestselera(data);
-            ispisZanrova(data);
-        },
-        error: function(err){
-            console.error(err);
-        }
+        success: success
     });
-
-    document.querySelector("#sort").addEventListener("change", sortiranje);
-
-
-    for(let i=0; i<=18; i++){
-        if(window.location.href == `https://sanjabozovic.github.io/Flourish-and-Blotts/knjiga.html?id=${i}`){
-            filtriranaKnjiga();
-        }
-    }
 }
-
-}
-
 
 function menu(){
-    var menuLinks = ["Početna", "O knjižari", "Proizvodi", "Kontakt", "O meni"];
+    var menuLinks = ["Početna", "Proizvodi", "Kontakt", "O meni"];
     var menuWhere = document.getElementById("menu");
       
     for(var i=0; i<menuLinks.length; i++){
@@ -52,23 +49,17 @@ function scrollMenu(){
   
       $("#scrl1").click(function() {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#about").offset().top
+            scrollTop: $("#sorting").offset().top
         }, 1000);
       });
   
       $("#scrl2").click(function() {
         $([document.documentElement, document.body]).animate({
-            scrollTop: $("#sorting").offset().top
-        }, 1000);
-      });
-
-      $("#scrl3").click(function() {
-        $([document.documentElement, document.body]).animate({
             scrollTop: $("#form").offset().top
         }, 1000);
       });
 
-      $("#scrl4").click(function() {
+      $("#scrl3").click(function() {
         $([document.documentElement, document.body]).animate({
             scrollTop: $("#author").offset().top
         }, 1000);
@@ -93,7 +84,7 @@ function ispisZanrova(knjige){
     document.querySelector("#filter").innerHTML += ispis;
 
     document.querySelector("#zanr").addEventListener("change", function() {
-        Number(this.value) ? filtrirajPoZanru(this.value) : dohvatiKnjige();
+        Number(this.value) ? filtrirajPoZanru(this.value) : dohvatiKnjige(function(knjige){ispisKnjiga(knjige)});
     });
 
 
@@ -207,7 +198,7 @@ function sortiranje() {
                 ispisKnjiga(knjige);
             }
             else {
-                ispisKnjiga(knjige);
+                dohvatiKnjige(function(knjige){ispisKnjiga(knjige)});
             }}
         },
         error: function(err){
@@ -218,18 +209,20 @@ function sortiranje() {
 
 
 
-function dohvatiKnjige() {
-    $.ajax({
-        url : "data/knjige.json",
-        method : "GET",
-        type : "json",
-        success : function(data) {
-            ispisKnjiga(data);
-        },
-        error : function(xhr, error, status) {
-            alert(status);
+
+
+function obradaZanra(k){
+    let ispis = "";
+    k.forEach((el, i) => {
+        if(typeof el == "object"){
+            i == 0 ? ispis += el.zanrNaziv : ispis += ", " + el.zanrNaziv;
         }
-    });
+        else {
+            i == 0 ? ispis += el : ispis += ", " + el;
+        }
+    })
+
+    return ispis;
 }
 
 function ispisKnjiga(knjige){
@@ -239,17 +232,52 @@ function ispisKnjiga(knjige){
         if (k.bestseler == false){
             ispis += `
             <article class="autori">
-                <a href="knjiga.html?id=${k.id}"><img src="${k.slika}" alt="${k.naziv}"></a>
+                <img src="${k.slika}" alt="${k.naziv}">
                 <h4>${k.naziv}</h4>
-                <p>${k.autor}</p>
-                <p>${k.cena} dinara</p>
+                ${k.autor} </br>
+                ${k.cena} dinara </br>
+                <button id="details${k.id}" class="details" onclick="prikazi(${k.id})" style="cursor:pointer;">Detalji</button>
+                <div id="knjigaOkvir${k.id}" class="modal">
+                    <div class="knjigaPosebno">
+                        <span class="close" id="btn${k.id}"">&times;</span>
+                        <div class="flexBook">
+                            <div><h2>${k.naziv}</h2> </br>
+                            <img src="${k.slika}" alt="${k.naziv}"> </br></br>
+                            <b>Autor</b>: ${k.autor} </br></br>
+                            <b>Godina izdanja</b>: ${k.godinaIzdanja} </br></br></div>
+                            <div class="smaller"><b>Cena</b>: ${k.cena} dinara </br></br>
+                            <b>Žanr</b>: ${obradaZanra(k.zanrovi)} </br></br>
+                            <b>Pismo</b>: ${k.pismo} </br></br>
+                            <b>Format</b>:${k.format}  </br></br>
+                            <b>Opis</b>: ${k.opis} </br></br>
+                            <button class="cart" data-id="${k.id}" onclick="addToCart(${k.id})">Dodaj u korpu</button>
+                        </div>
+                    </div>
+                </div>
             </article>
             `
         }
     }
     document.getElementById("displayProducts").innerHTML = ispis;
-   
 }
+
+function prikazi(id){
+   dohvatiKnjige(function(knjige){
+       for(let k of knjige){
+        if(id==k.id){ 
+            var modalID = "knjigaOkvir"+k.id;
+            var modal = document.getElementById(modalID);
+            var btnID = "btn"+k.id;
+            var btn = document.getElementById(btnID);
+            btn.onclick = function() {
+                modal.style.display = "none";
+            }
+            modal.style.display="block";
+       }
+       }
+   })
+}
+    
 
 function ispisBestselera(bestseleri){
     let ispis = `<h2 class="middle">Bestseleri</h2>`;
@@ -259,8 +287,26 @@ function ispisBestselera(bestseleri){
             <article class="bestSeler">
                 <h3>${b.naziv}</h3>
                 <p>${b.autor}</p>
-                <a href="#"><img src="${b.slika}" alt="${b.naziv}"></a>
+                <img src="${b.slika}" alt="${b.naziv}">
                 <p>${b.cena} dinara</p>
+                <button id="details${b.id}" onclick="prikazi(${b.id})" style="cursor:pointer;" class="details">Detalji</button>
+                    <div id="knjigaOkvir${b.id}" class="modal">
+                        <div class="knjigaPosebno">
+                            <span class="close" id="btn${b.id}">&times;</span>
+                            <div class="flexBook">
+                                <div><h2>${b.naziv}</h2> </br>
+                                <img src="${b.slika}" alt="${b.naziv}"> </br></br>
+                                <b>Autor</b>: ${b.autor} </br></br>
+                                <b>Godina izdanja</b>: ${b.godinaIzdanja} </br></br></div>
+                                <div class="smaller"><b>Cena</b>: ${b.cena} dinara </br></br>
+                                <b>Žanr</b>: ${obradaZanra(b.zanrovi)} </br></br>
+                                <b>Pismo</b>: ${b.pismo} </br></br>
+                                <b>Format</b>:${b.format}  </br></br>
+                                <b>Opis</b>: ${b.opis}  </br></br>
+                                <button class="cart" data-id="${b.id}" onclick="addToCart(${b.id})">Dodaj u korpu</button> </div>
+                            </div>
+                        </div>
+                    </div>
             </article>
             `
         }
@@ -270,7 +316,7 @@ function ispisBestselera(bestseleri){
 
 }
 
-if( window.location.href =="http://127.0.0.1:8887" || window.location.href == "http://127.0.0.1:8887/index.html"){
+
 var messageOkay = document.getElementById("messageAccept");
 
 function accept() {
@@ -342,59 +388,146 @@ function accept() {
        document.getElementsByName("send")[0].addEventListener("click", accept);
 
 
-}
+       //shopping cart
 
-       // Knjiga.html
+      
 
-
-       function obrada(data){
-        let ispis = "";
-        data.forEach((element, i) => {
-            if(typeof element == "object"){
-                i == 0 ? ispis += element.zanrNaziv : ispis += ", " + element.zanrNaziv;
+       function openCart(){
+            var modal = document.getElementById("okvir");
+            var btn = document.getElementById("zatvorii");
+            btn.onclick = function() {
+                modal.style.display = "none";
             }
-            else {
-                i == 0 ? ispis += element : ispis += ", " + element;
+            modal.style.display="block";
+       }
+    
+    
+       function productsInCart() {
+        return JSON.parse(localStorage.getItem("products"));
+    }
+    
+    function addToCart(id) {
+        var products = productsInCart();
+        var productsAlreadyInCart = products.filter(p => p.id == id).length;
+    
+        if(products) {
+            if(productsAlreadyInCart) {
+                let products = productsInCart();
+                 for(let i in products){
+                    if(products[i].id == id) {
+                        products[i].quantity++;
+                        break;
+                    }      
             }
+            localStorage.setItem("products", JSON.stringify(products));
+            } else {
+                let products = productsInCart();
+                products.push({
+                    id : id,
+                    quantity : 1
+                });
+                localStorage.setItem("products", JSON.stringify(products));
+            }
+        } else {
+            let products = [];
+            products[0] = {
+                id : id,
+                quantity : 1
+            };
+            localStorage.setItem("products", JSON.stringify(products));
+        }
+    
+        alert("Knjiga je uspešno dodata u korpu!");
+        
+        location.reload();
+    }
+    
+
+    //-------------------------------
+
+        
+    let products = productsInCart();
+        
+    if(!products.length){
+        $("#cartInside").html("<h1>Vaša korpa je prazna!</h1>");
+    }else{
+        prikaziUKorpi();  
+    }
+
+    
+    function prikaziUKorpi() {
+        let products = productsInCart();
+
+        dohvatiKnjige(function(data){
+            
+                data = data.filter(p => {
+                    for(let prod of products)
+                    {
+                        if(p.id == prod.id) {
+                            p.quantity = prod.quantity;
+                            return true;
+                        }
+                            
+                    }
+                    return false;
+                });
+                generateTable(data);
         })
-    
-        return ispis;
     }
 
-       
-
-    function knjigaPosebno(knjiga){
-        let ispis = "";
-        let niz = knjiga.slice(0, 1);
+    function generateTable(products) {
+        if(!products.length){
+            $("#cartInside").html("<h2>Vaša korpa je prazna!</h2>");
+        }else{
+        let html = `
+                <table id="cartTable">
+                    <thead>
+                        <tr>
+                            <th>Knjiga</th>
+                            <th>Naziv</th>
+                            <th>Cena</th>
+                            <th>Količina</th>
+                            <th>Ukupno</th>
+                            <th>Ukloni</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+                    
+        for(let p of products) {
+            html += `<tr>
+                        <td>
+                            <img src="${p.slika}" alt="${p.naziv}"">
+                        </td>
+                        <td>${p.naziv}</td>
+                        <td>${p.cena} dinara</td>
+                        <td>${p.quantity}</td>
+                        <td>${p.cena * p.quantity} dinara</td>
+                        <td>
+                        <button class="cart" onclick='removeFromCart(${p.id})'>Ukloni</button>
+                        </td>
+                    </tr>`
+                    
+        }
     
-        niz.forEach(element =>{
-            ispis += `<div id="content">
-                            <h1>${element.naziv}</h1>
-                            <p>Release Date: ${datum(element.datum)}</p>
-                        </div>
-                        <div id="image">
-                            <img src="${element.slika}" alt="${element.naziv}" />
-                            <p>${element.opis}</p>
-                        </div>`
-        })
+        html +=`    </tbody>
+                </table>`;
     
-        document.getElementById("knjiga").innerHTML = ispis;
-
-    function filtriranaKnjiga(){
-        var url = window.location.href;
-        var idKnjige = url.split("?")[1].split("=")[1];
+        $("#cartInside").html(html);}
     
-
-
-        dohvatiKnjige(
-            function(knjige){
-                const filtrirano = knjige.filter(el => el.id == idKnjige);
-    
-                knjigaPosebno(filtrirano);
-            }
-        )
     }
-    }
-
-
     
+    
+    function productsInCart() {
+        return JSON.parse(localStorage.getItem("products"));
+    }
+    
+    
+    
+    function removeFromCart(id) {
+        let products = productsInCart();
+        let filtered = products.filter(p => p.id != id);
+    
+        localStorage.setItem("products", JSON.stringify(filtered));
+    
+        prikaziUKorpi();
+    }

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="shortcut icon" href="assets/images/logo.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Flourish and Blotts</title>
 </head>
 <body>
@@ -17,10 +19,17 @@
         <div class="cleaner"></div>
     </header>
     <h1 class="middle">Flourish and Blotts</h1>
-    <div id="about">
-         <p>
-
-         </p>
+    
+    <div id="cart">
+        <h3>Vaša korpa:</h3>
+        <button class="fa fa-shopping-cart" id="cartButton" style="cursor: pointer;" onclick="openCart()"></button>
+        <div id="okvir">
+            <div class="korpa">
+                <span class="close" id="zatvorii">&times;</span>
+                <div id="cartInside">
+                </div>
+            </div>
+        </div>
     </div>
     <aside id="left">
        
