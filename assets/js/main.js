@@ -11,14 +11,7 @@ $(document).ready(function(){
     )
    
     document.querySelector("#sort").addEventListener("change", sortiranje);
-
-    console.log(localStorage);
 })
-
-
-document.onload = function (){
-    
-}
 
 function dohvatiKnjige(success) {
     $.ajax({
@@ -403,7 +396,8 @@ function accept() {
     
     
        function productsInCart() {
-        return JSON.parse(localStorage.getItem("products"));
+        if(localStorage){
+        return JSON.parse(localStorage.getItem("products"));}
     }
     
     function addToCart(id) {
