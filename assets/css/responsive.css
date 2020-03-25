@@ -114,4 +114,9 @@
     .accept{
         width: 100%;
     }
+
+    .flexBook{
+        flex-direction: column;
+        align-items: center;
+    }
 }
