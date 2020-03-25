@@ -11,6 +11,11 @@ $(document).ready(function(){
     )
    
     document.querySelector("#sort").addEventListener("change", sortiranje);
+
+
+    
+        
+   
 })
 
 function dohvatiKnjige(success) {
@@ -395,42 +400,41 @@ function accept() {
        }
     
     
-       function productsInCart() {
-        if(localStorage){
-        return JSON.parse(localStorage.getItem("products"));}
-    }
-    
     function addToCart(id) {
-        var products = productsInCart();
-        var productsAlreadyInCart = products.filter(p => p.id == id).length;
+        var knjige = JSON.parse(localStorage.getItem("knjige"));
     
-        if(products) {
-            if(productsAlreadyInCart) {
-                let products = productsInCart();
-                 for(let i in products){
-                    if(products[i].id == id) {
-                        products[i].quantity++;
+        if(knjige) {
+            if(productsAlreadyInCart()) {
+                var knjige = JSON.parse(localStorage.getItem("knjige"));
+                 for(let i in knjige){
+                    if(knjige[i].id == id) {
+                        knjige[i].quantity++;
                         break;
                     }      
             }
-            localStorage.setItem("products", JSON.stringify(products));
+            localStorage.setItem("knjige", JSON.stringify(knjige));
             } else {
-                let products = productsInCart();
-                products.push({
+                var knjige = JSON.parse(localStorage.getItem("knjige"));
+                knjige.push({
                     id : id,
                     quantity : 1
                 });
-                localStorage.setItem("products", JSON.stringify(products));
+                localStorage.setItem("knjige", JSON.stringify(knjige));
             }
         } else {
-            let products = [];
-            products[0] = {
+            var knjige = [];
+            knjige[0] = {
                 id : id,
                 quantity : 1
             };
-            localStorage.setItem("products", JSON.stringify(products));
+            localStorage.setItem("knjige", JSON.stringify(knjige));
         }
     
+        
+        function productsAlreadyInCart(){
+            return knjige.filter(f => f.id == id).length;
+        }
+
         alert("Knjiga je uspešno dodata u korpu!");
         
         location.reload();
@@ -439,10 +443,10 @@ function accept() {
 
     //-------------------------------
 
+
+    var knjige = JSON.parse(localStorage.getItem("knjige"));
         
-    let products = productsInCart();
-        
-    if(!products.length){
+    if(!knjige || knjige===null){
         $("#cartInside").html("<h1>Vaša korpa je prazna!</h1>");
     }else{
         prikaziUKorpi();  
@@ -450,12 +454,12 @@ function accept() {
 
     
     function prikaziUKorpi() {
-        let products = productsInCart();
+        var knjige = JSON.parse(localStorage.getItem("knjige"));
 
         dohvatiKnjige(function(data){
             
                 data = data.filter(p => {
-                    for(let prod of products)
+                    for(let prod of knjige)
                     {
                         if(p.id == prod.id) {
                             p.quantity = prod.quantity;
@@ -469,8 +473,8 @@ function accept() {
         })
     }
 
-    function generateTable(products) {
-        if(!products.length){
+    function generateTable(knjige) {
+        if(!knjige.length){
             $("#cartInside").html("<h2>Vaša korpa je prazna!</h2>");
         }else{
         let html = `
@@ -487,7 +491,7 @@ function accept() {
                     </thead>
                     <tbody>`;
                     
-        for(let p of products) {
+        for(let p of knjige) {
             html += `<tr>
                         <td>
                             <img src="${p.slika}" alt="${p.naziv}"">
@@ -511,17 +515,13 @@ function accept() {
     }
     
     
-    function productsInCart() {
-        return JSON.parse(localStorage.getItem("products"));
-    }
-    
-    
     
     function removeFromCart(id) {
-        let products = productsInCart();
-        let filtered = products.filter(p => p.id != id);
+        var knjige = JSON.parse(localStorage.getItem("knjige"));
+        var obrisano = knjige.filter(function(el){
+            return el.id != id;
+        })
     
-        localStorage.setItem("products", JSON.stringify(filtered));
-    
+        localStorage.setItem("knjige", JSON.stringify(obrisano));
         prikaziUKorpi();
     }
