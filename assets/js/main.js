@@ -27,7 +27,7 @@ function dohvatiKnjige(success) {
 }
 
 function menu(){
-    var menuLinks = ["Početna", "Proizvodi", "Kontakt", "O meni"];
+    var menuLinks = ["Početna", "Knjige", "Kontakt", "O meni"];
     var menuWhere = document.getElementById("menu");
       
     for(var i=0; i<menuLinks.length; i++){
@@ -480,7 +480,7 @@ function accept() {
         let html = `
                 <table id="cartTable">
                     <thead>
-                        <tr>
+                        <tr id="zaglavlje">
                             <th>Knjiga</th>
                             <th>Naziv</th>
                             <th>Cena</th>
@@ -492,14 +492,14 @@ function accept() {
                     <tbody>`;
                     
         for(let p of knjige) {
-            html += `<tr>
+            html += `<tr class="knj">
                         <td>
                             <img src="${p.slika}" alt="${p.naziv}"">
                         </td>
-                        <td>${p.naziv}</td>
-                        <td>${p.cena} dinara</td>
-                        <td>${p.quantity}</td>
-                        <td>${p.cena * p.quantity} dinara</td>
+                        <td><h4 class="hide">Naziv:</h4>${p.naziv}</td>
+                        <td><h4 class="hide">Cena:</h4>${p.cena} dinara</td>
+                        <td><h4 class="hide">Količina:</h4>${p.quantity}</td>
+                        <td><h4 class="hide">Ukupno:</h4>${p.cena * p.quantity} dinara</td>
                         <td>
                         <button class="cart" onclick='removeFromCart(${p.id})'>Ukloni</button>
                         </td>
@@ -514,6 +514,7 @@ function accept() {
     
     }
     
+
     
     
     function removeFromCart(id) {

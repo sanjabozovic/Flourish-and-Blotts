@@ -1,0 +1,117 @@
+@media screen and (max-width: 1200px){
+    .modal{
+        height: 100%;
+    }
+    
+    .knjigaPosebno{
+        width: 60%;
+    }
+
+    .korpa{
+        width: 90%;
+    }
+
+    #cartInside{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 930px){
+    #zaglavlje{
+        display: none;
+    }
+
+    .knj{
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid black;
+    }
+
+    .knj td{
+        border: none;
+    }
+
+    .cart{
+        width: 100px;
+    }
+
+    .hide{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 800px){
+    #left{
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: 800px;
+        border: none;
+    }
+    #displayProducts{
+        max-width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-height: 800px;
+    }
+    .knjigaPosebno{
+        width: 80%;
+    }
+    .middle{
+        width:100%;
+    }
+
+    #desno{
+        margin-top: 250px;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #formAuto{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 683px){
+    .autori{
+        width: 40%;
+        height: 400px;
+    }
+    #desno, #displayProducts{
+        height: 3400px;
+    }
+}
+
+@media screen and (max-width: 580px){
+    #logo{
+        display: none;
+    }
+    #menu{
+        width: 95%;
+    }
+    
+    .korpa{
+        max-width: 80%;
+    }
+
+    #author img{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .autori{
+        width: 80%;
+    }
+
+    #displayProducts, #desno{
+        height: 6300px;
+    }
+
+    .accept{
+        width: 100%;
+    }
+}

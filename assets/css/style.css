@@ -11,6 +11,10 @@ body{
     clear: both;
 }
 
+.hide{
+    display: none;
+}
+
 /* header */
 
 header{
@@ -117,6 +121,7 @@ td {
 .autori{
     width: 30%;
     height: 300px;
+    text-align: center;
 }
 
 .autori img{
@@ -136,11 +141,6 @@ td {
 /* products */
 
 
-#products{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
 
 #forSort{
     width: 100%;
@@ -155,10 +155,6 @@ td {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-
-#displayProducts article{
-    text-align: center;
 }
 
 
