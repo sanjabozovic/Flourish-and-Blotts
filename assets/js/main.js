@@ -406,9 +406,9 @@ function accept() {
         if(knjige) {
             if(productsAlreadyInCart()) {
                 var knjige = JSON.parse(localStorage.getItem("knjige"));
-                 for(let i in knjige){
-                    if(knjige[i].id == id) {
-                        knjige[i].quantity++;
+                 for(let k in knjige){
+                    if(knjige[k].id == id) {
+                        knjige[k].quantity++;
                         break;
                     }      
             }
@@ -469,11 +469,11 @@ function accept() {
                     }
                     return false;
                 });
-                generateTable(data);
+                ispisiUKorpi(data);
         })
     }
 
-    function generateTable(knjige) {
+    function ispisiUKorpi(knjige) {
         if(!knjige.length){
             $("#cartInside").html("<h2>Vaša korpa je prazna!</h2>");
         }else{
