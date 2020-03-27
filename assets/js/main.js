@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    menu();
-    scrollMenu();
 
     dohvatiKnjige(
         function(knjige){
@@ -12,10 +10,32 @@ $(document).ready(function(){
    
     document.querySelector("#sort").addEventListener("change", sortiranje);
 
-
+    $.ajax({
+        url: "data/ikonice.json",
+        method: "GET",
+        type: "json",
+        success: function(data){
+            ikon(data, document.getElementById("ikonice"));
+        },
+        error: function(err){
+            console.error(err);
+        }
+    })
     
+    $.ajax({
+        url: "data/meni.json",
+        method: "GET",
+        type: "json",
+        success: function(data){
+            menu(data, document.getElementById("menu"));
+
+            scrollMenu();
+        },
+        error: function(err){
+            console.error(err);
+        }
+    })
         
-   
 })
 
 function dohvatiKnjige(success) {
@@ -26,16 +46,15 @@ function dohvatiKnjige(success) {
     });
 }
 
-function menu(){
-    var menuLinks = ["Početna", "Knjige", "Kontakt", "O meni"];
-    var menuWhere = document.getElementById("menu");
-      
-    for(var i=0; i<menuLinks.length; i++){
-        var MenuA = document.createElement("a");
-        MenuA.id = "scrl"+ i;
-        MenuA.innerHTML= menuLinks[i];
-        menuWhere.appendChild(MenuA);
-    }
+function menu(a, b){
+    let ispis = "";
+    a.forEach(el => {
+        ispis += `
+        <a id="scrl${el.id}">${el.tekst}</a>
+    `;
+    })
+    
+    b.innerHTML = ispis;
 }
 
 function scrollMenu(){
@@ -525,4 +544,15 @@ function accept() {
     
         localStorage.setItem("knjige", JSON.stringify(obrisano));
         prikaziUKorpi();
+    }
+
+
+    function ikon(a, b){
+        let ispis = "";
+
+        a.forEach(el => {
+            ispis += `<a href="${el.gde}" target="_blank"><i class="${el.ikonica}"></i></a>`;
+        })
+    
+        b.innerHTML = ispis;
     }

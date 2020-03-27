@@ -173,7 +173,7 @@ td {
 
   .knjigaPosebno {
     background-color: lightblue;
-    margin: 13% auto; 
+    margin: 2% auto; 
     padding: 20px;
     border: 1px solid blue;
     width: 40%; 
@@ -249,11 +249,6 @@ td {
  #cartButton:hover, .cart{
     background-color: lightblue;
  }
-/*footer*/
-
-footer{
-    width: 100%;
-}
 
 /* sort/filter*/
 
@@ -348,12 +343,31 @@ footer{
 /*footer*/
 
 footer{
-    height: 50px;
+    height: 70px;
     width: 100%;
     background-color: lightblue;
     margin-top: 100px;
     color: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+}
+
+#ikonice{
+    width: 10%;
+}
+
+.fa{
+    padding: 2%;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+}
+
+.fa:visited{
+    color: black;
+}
+
+.fa:hover{
+    color: blue;
 }

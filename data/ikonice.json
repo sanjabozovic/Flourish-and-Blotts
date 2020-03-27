@@ -1,0 +1,22 @@
+[
+    {
+        "gde": "https://www.facebook.com",
+        "ikonica": "fa fa-facebook"
+    },
+    {
+        "gde": "https://www.instagram.com",
+        "ikonica": "fa fa-instagram"
+    },
+    {
+        "gde": "https://twitter.com",
+        "ikonica": "fa fa-twitter"
+    },
+    {
+        "gde": "sitemap.xml",
+        "ikonica": "fa fa-sitemap"
+    },
+    {
+        "gde": "https://docs.google.com/document/d/1H3ptLuNJE7jY7ct2-qNZGbx-f-kauiXdTt67C8EE3R4/edit",
+        "ikonica": "fa fa-file-pdf-o"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "tekst": "Početna"
+    },
+    {
+        "id": 1,
+        "tekst": "Knjige"
+    },
+    {
+        "id": 2,
+        "tekst": "Kontakt"
+    },
+    {
+        "id": 3,
+        "tekst": "O meni"
+    }
+]
